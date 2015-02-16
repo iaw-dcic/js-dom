@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: 'Josefin Slab', Arial, sans-serif;
+    font-size: 13px;
+    background-image: url(../images/background-wood.jpg);
+    background-size: strech;
+}
+
+.container {
+    background-image: url(../images/background-760x760.jpg);
+    background-color: transparent;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top center;
+    -webkit-background-size: auto, cover;
+    -moz-background-size: auto, cover;
+    -o-background-size: auto, cover;
+    background-size: auto, cover;
+    height: 760px;
+}
+
+tabla {
+    width: 750px;
+}
+
+.titulo {
+    padding-top: 75px;
+    text-align: center;
+}
+
+.titulo h1 {
+    font-family: "Tahoma", sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-transform:capitalize;
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    padding-left: 200px;
+}
+
+.menu table {
+    margin-top: 165px;
+    font-family: "Tahoma", sans-serif;
+    width:650px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse:collapse;
+}
+
+.menu table td, .menu table th {
+    padding:3px 7px 2px 7px;
+}
+
+.menu table th {
+    font-size:1.2em;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#fff;
+}
+
+.menu table tbody tr th {
+    font-size:1.4em;
+    text-transform:capitalize;
+}
+
+
+.menu table tr td {
+    color:white;
+    cursor: pointer;
+}
+
+.menu table tbody tr td:nth-child(1) {
+    text-align: center;
+    width: 100px;
+}
+
+.menu table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+.menu table tr:hover td {
+    color:white;
+    background-color: rgba(0, 162, 200, 0.7);
+}
+
+.menu table tr.selected:hover td {
+    color:white;
+    background-color: rgba(0, 162, 200, 0.9);
+}
+
+.menu table tr.selected td {
+    color:white;
+    background-color: rgba(0, 162, 200, 0.5);
+}
+
+.calculo {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;    
+    text-align: right;
+    font-family: "Tahoma", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.calculo span.total {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 2px;
+    border-top: rgba(0, 162, 200, 0.5) 5px solid;
+    background-color: rgba(255,255,255,0.8);
+    min-width:150px;
+    display: inline-block;
+    text-align: center;
+}
+
+.versiones {
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
+    margin-top: 230px;
+    font-size: 40px;
+    color: white;
+}
+
+.versiones a {
+    text-decoration: none;
+}
+
+.versiones a:visited {
+    color: white;
+}
+
+.versiones a:hover {
+    color: grey;
+}

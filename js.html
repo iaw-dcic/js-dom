@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Sal's Pizza</title>
+        <link href="css/estilo.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="js/js.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="titulo">
+                <h1>Sal's Pizza - V1</h1>
+            </div>
+            <div class="menu">
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th>Comprar</th>
+                            <th>Pizzas</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="3">Clásicas</th>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Fugazzeta</td>
+                            <td>45</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Jamón y Queso</td>
+                            <td>44</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Especial</td>
+                            <td>48</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Mozzarella</td>
+                            <td>44</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Napolitana</td>
+                            <td>47</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Especiales</th>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Queso Azul y Peras Caramelizadas</td>
+                            <td>54</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Mariscos</td>
+                            <td>64</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Pollo</td>
+                            <td>34</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Hongos</td>
+                            <td>53</td>
+                        </tr>
+                        <tr onclick="actualizarPedido(event)">
+                            <td><input type="checkbox"/></td>
+                            <td>Ciervo Ahumado</td>
+                            <td>52</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="calculo">
+                <span class="total">
+                    Total: $ <span id="total">0.00</span>
+                </span>
+            </div>
+        </div>
+    </body>
+</html>
