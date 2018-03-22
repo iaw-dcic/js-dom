@@ -1,52 +1,52 @@
 [
     {
         "nombre": "Fugazzeta",
-        "precio": 45,
+        "precio": 200,
         "tipo" : "clásicas"
     },
     {
         "nombre": "Jamón y Queso",
-        "precio": 44,
+        "precio": 190,
         "tipo" : "clásicas"
     },
     {
         "nombre": "Especial",
-        "precio": 48,
+        "precio": 298,
         "tipo" : "clásicas"
     },
     {
         "nombre": "Muzzarella",
-        "precio": 44,
+        "precio": 210,
         "tipo" : "clásicas"
     },
     {
         "nombre": "Napolitana",
-        "precio": 47,
+        "precio": 240,
         "tipo" : "clásicas"
     },
     {
         "nombre": "Queso Azul y Peras Caramelizadas",
-        "precio": 54,
+        "precio": 254,
         "tipo" : "especiales"
     },
     {
         "nombre": "Mariscos",
-        "precio": 64,
+        "precio": 264,
         "tipo" : "especiales"
     },
     {
         "nombre": "Pollo",
-        "precio": 34,
+        "precio": 234,
         "tipo" : "especiales"
     },
     {
         "nombre": "Hongos",
-        "precio": 53,
+        "precio": 253,
         "tipo" : "especiales"
     },
     {
         "nombre": "Ciervo Ahumado",
-        "precio": 52,
+        "precio": 250,
         "tipo" : "especiales"
     }
 ]
