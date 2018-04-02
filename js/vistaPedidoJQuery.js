@@ -1,13 +1,12 @@
 function mostrarPizzas(pizzas) {
     var index;
 
-    for (var tipo in pizzas) {
+    $.each(pizzas, function(tipo, pizzasPorTipo) {
         agregarSubTitulo(tipo);
-        var pizzasPorTipo = pizzas[tipo];
-        for (index = 0; index < pizzasPorTipo.length; ++index) {
-            agregarPizza(pizzasPorTipo[index]);
-        }
-    }
+        $.each(pizzasPorTipo, function(index, pizza) {
+            agregarPizza(pizza);
+        });
+    });
 }
 
 function agregarSubTitulo(subtitulo) {
@@ -29,15 +28,5 @@ function actualizarTotal(total) {
 }
 
 function actualizarEstado(id, valor) {
-    //obtengo el elemento que genero el evento
-    var fila = document.getElementById(id);
-    
-    // obtengo el checkbox correspondiente
-    var check = fila.getElementsByTagName('INPUT')[0];
-
-    // actualizo el estado del checkbox
-    check.checked = valor;
-
-    //marco la fila como seleccionada o no, según corresponda
-    fila.setAttribute("class", valor ? "selected" : "");
+    $('#'+id).prop("class", valor ? "selected" : "").find('input').prop('checked', valor);
 }
