@@ -1,17 +1,18 @@
 var pedido;
+var pizzas;
 
 $(function() {
     $.get("./data/pizzas.json", function(data, status) {
-        pedido = data;
+        pedido = recuperarPedido();
+        pizzas = new Map(data.map((pizza) => [getId(pizza), pizza]));
         mostrarPizzas(ordenarPizzas(data));
+        actualizarTotal(computarTotal());
     });
 });
 
 function ordenarPizzas(data) {
     var pizzas = new Object();
     $.each(data, function( index, pizza ) {
-        pizza.id = index;
-        pizza.enPedido = false;
         var pizzasPorTipo;
         if (pizzas.hasOwnProperty(pizza.tipo))
             pizzasPorTipo = pizzas[pizza.tipo];
@@ -24,13 +25,13 @@ function ordenarPizzas(data) {
     return pizzas;
 }
 
-function actualizarPedido(e) {
+function onActualizarPedido(e) {
     var id = $(e.target).parents("tr").attr("id");
-    var pizza = pedido[id];
-    pizza.enPedido = !pizza.enPedido;
 
     //le cambio el estado
-    actualizarEstado(id, pizza.enPedido);
+    actualizarEstado(id, actualizarPedido(id));
+
+    guardarPedido(pedido);
 
     //recalculo el total
     actualizarTotal(computarTotal());
@@ -42,10 +43,27 @@ function actualizarPedido(e) {
 function computarTotal() {
     var total = 0.0;
 
-    $.each(pedido, function(index, pizza){
-        if (pizza.enPedido) {
-            total += pizza.precio;
-        }
+    pedido.forEach(function(id){
+        total += pizzas.get(id).precio;
     })
     return total;
 }
+
+function getId(pizza) {
+    return pizza.nombre.replace(/\s/g, '');
+}
+
+function enPedido(id) {
+    return pedido.has(id);
+}
+
+function actualizarPedido(id) {
+    var enPedido = !pedido.has(id);
+    if (enPedido) {
+        pedido.add(id);
+    } else {
+        pedido.delete(id);
+    }
+    return enPedido;
+}
+

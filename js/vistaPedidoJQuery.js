@@ -4,7 +4,11 @@ function mostrarPizzas(pizzas) {
     $.each(pizzas, function(tipo, pizzasPorTipo) {
         agregarSubTitulo(tipo);
         $.each(pizzasPorTipo, function(index, pizza) {
-            agregarPizza(pizza);
+            var id = getId(pizza);
+            agregarPizza(id, pizza);
+            if (enPedido(id)) {
+                actualizarEstado(id, true);
+            }
         });
     });
 }
@@ -14,12 +18,12 @@ function agregarSubTitulo(subtitulo) {
     $("#tabla").append($("<tr></tr>").append(subtitulo));
 }
 
-function agregarPizza(pizza) {
-    var row = $("<tr></tr>").attr("id", pizza.id);
+function agregarPizza(id, pizza) {
+    var row = $("<tr></tr>").attr("id", id);
     row.append($("<td></td").append($("<input>").attr("type", "checkbox")));
     row.append($("<td></td").text(pizza.nombre));
     row.append($("<td></td").text(pizza.precio));
-    row.click(actualizarPedido);
+    row.click(onActualizarPedido);
     $("#tabla").append(row);
 }
 
