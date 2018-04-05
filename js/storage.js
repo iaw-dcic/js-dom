@@ -1,9 +1,9 @@
 
 function guardarPedido(pedido) {
-    localStorage.pedido = JSON.stringify(Array.from(pedido.values()));
+    window.localStorage.setItem("pedido", JSON.stringify(Array.from(pedido.values())));
 }
 
 function recuperarPedido() {
-    var result = localStorage.pedido;
+    var result = window.localStorage.getItem("pedido");
     return (result != undefined) ? new Set(JSON.parse(result)) : new Set();
 }
